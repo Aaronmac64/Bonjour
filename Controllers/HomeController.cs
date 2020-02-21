@@ -54,11 +54,11 @@ namespace Bonjour.Controllers
             double val = double.Parse(visits);
             val = val + 1;
             visits = val.ToString();
-            Response.Cookies.Append("Visits", visits);
+            Response.Cookies.Append("Visits", visits, cookieOptions);
 
             } else {
 
-            Response.Cookies.Append("Visits", "0");
+            Response.Cookies.Append("Visits", "0", cookieOptions);
             visits = "1";
 
             }     
