@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/amcdevitt989/Bonjour/Bonjour.csproj": {}
+    "/home/amcdevitt989/BonjourGit/Bonjour.csproj": {}
   },
   "projects": {
-    "/home/amcdevitt989/Bonjour/Bonjour.csproj": {
+    "/home/amcdevitt989/BonjourGit/Bonjour.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/amcdevitt989/Bonjour/Bonjour.csproj",
+        "projectUniqueName": "/home/amcdevitt989/BonjourGit/Bonjour.csproj",
         "projectName": "Bonjour",
-        "projectPath": "/home/amcdevitt989/Bonjour/Bonjour.csproj",
+        "projectPath": "/home/amcdevitt989/BonjourGit/Bonjour.csproj",
         "packagesPath": "/home/amcdevitt989/.nuget/packages/",
-        "outputPath": "/home/amcdevitt989/Bonjour/obj/",
+        "outputPath": "/home/amcdevitt989/BonjourGit/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/share/dotnet/sdk/NuGetFallbackFolder"

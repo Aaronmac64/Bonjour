@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Web;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Bonjour.Models;
@@ -38,6 +39,30 @@ namespace Bonjour.Controllers
         }
         public IActionResult Display(string name = "World", string lang = "english")
         {
+            
+            var cookieOptions = new Microsoft.AspNetCore.Http.CookieOptions()
+            {
+                Path = "/", HttpOnly = false, IsEssential = true, //<- there
+                Expires = DateTime.Now.AddMonths(1), 
+            };
+
+            string visits = "null";
+
+            if (Request.Cookies["Visits"] != null) {
+
+            visits = Request.Cookies["Visits"];
+            double val = double.Parse(visits);
+            val = val + 1;
+            visits = val.ToString();
+            Response.Cookies.Append("Visits", visits);
+
+            } else {
+
+            Response.Cookies.Append("Visits", "0");
+            visits = "1";
+
+            }     
+
             string greeting = "english";
             switch (lang) { 
                 case "english": 
@@ -57,7 +82,8 @@ namespace Bonjour.Controllers
                     greeting = "Hola,";
                     break;
             } 
-            return Content(string.Format("<h1>" + greeting + " {0}!</h1>", name), "text/html");
+
+            return Content(string.Format("<h1>" + greeting + " {0}! Visits = {1}</h1>", name, visits), "text/html");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
